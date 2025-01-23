@@ -1,0 +1,5 @@
+
+
+                 One to One
+
+https://www.baeldung.com/jpa-one-to-one
