@@ -1,19 +1,20 @@
-package com.jpaexample.springdatajpa.service;
+package com.jpaexample.springdatajpa.service.impl;
 
 import com.jpaexample.springdatajpa.model.Laptop;
 import com.jpaexample.springdatajpa.model.Student;
 import com.jpaexample.springdatajpa.repository.LaptopRepo;
 import com.jpaexample.springdatajpa.repository.StudentRepo;
+import com.jpaexample.springdatajpa.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TempCls {
+public class StudentServiceImp implements StudentService {
 
     private StudentRepo studentRepo;
     private LaptopRepo laptopRepo;
 
-    public TempCls(){
+    public StudentServiceImp(){
 
     }
 
@@ -23,12 +24,13 @@ public class TempCls {
     Why it was not working if omitted Autowired:
     If there are multiple constructors, Spring needs the @Autowired annotation to know which constructor to use for dependency injection. Otherwise, it cannot decide which one to use, and it will throw an exception.
      */
-    public TempCls(StudentRepo studentRepo, LaptopRepo laptopRepo){
+    public StudentServiceImp(StudentRepo studentRepo, LaptopRepo laptopRepo){
         this.laptopRepo = laptopRepo;
         this.studentRepo = studentRepo;
     }
 
-    public String getStudent(long id){
+    @Override
+    public String getStudentById(long id){
         // Fetch the student by ID
         Student student = studentRepo.findById(id).orElse(null);
 

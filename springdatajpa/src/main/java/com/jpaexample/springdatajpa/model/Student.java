@@ -1,7 +1,14 @@
 package com.jpaexample.springdatajpa.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@Getter
+@Setter
 @Entity
 @Table(name = "jpa_students")
 public class Student {
@@ -22,35 +29,11 @@ public class Student {
     //Here in Student, Since the mappedBy attribute is present in the Student entity, it means that this entity does not control the foreign key.
     private Laptop laptop;
 
+    // one to many: many address
+    @OneToMany()
+    private List<Address> addressList ; // or private List<Address> addressList = = new ArrayList<>()
+
     // getter & setter
-
-    public Long getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(Long studentId) {
-        this.studentId = studentId;
-    }
-
-    public String getAbout() {
-        return about;
-    }
-
-    public void setAbout(String about) {
-        this.about = about;
-    }
-
-    public String getStudentName() {
-        return studentName;
-    }
-
-    public void setStudentName(String studentName) {
-        this.studentName = studentName;
-    }
-
-    public Laptop getLaptop() {
-        return laptop;
-    }
 
     public Student(){
 
