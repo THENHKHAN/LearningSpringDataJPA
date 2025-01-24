@@ -3,3 +3,4 @@
                  One to One
 
 https://www.baeldung.com/jpa-one-to-one
+JavaGuide: https://www.javaguides.net/2019/08/spring-boot-jpa-hibernate-one-to-one-mapping-example.html

@@ -24,6 +24,9 @@ public class Laptop {
     private Student studentRefInLaptopEntityAsFK;// this is the ref variable by this we can get info of the Student Entity.
 
 
+    @ManyToOne()
+
+
     // getter & setter
     public String getBrand() {
         return brand;
